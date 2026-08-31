@@ -1,8 +1,6 @@
 pipeline {
     agent any
-
     stages {
-
         stage('git') {
             steps {
                git credentialsId: 'githup_creds', url: 'https://github.com/abinaya-s2006/pipelinejava.git'
@@ -20,12 +18,11 @@ pipeline {
                 echo "mvn initialized"
             }
         }
-
         stage('deploy') {
             steps {
                 sh 'java -jar target/AWS-1.0-SNAPSHOT.jar'
             }
         }
 
-      
+    }
 }
