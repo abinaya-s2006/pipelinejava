@@ -20,6 +20,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
+                sh 'ls -l target'
                 sh 'java -jar target/AWS-1.0-SNAPSHOT.jar'
             }
         }
